@@ -11,7 +11,7 @@ export default function CartProvider({ children }) {
     setCartItems((prevItems) => [...prevItems, item]);
   };
 
-  const removeFromCart = (itemId) => {
+  const removeFromCart = (item) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
   };
 
