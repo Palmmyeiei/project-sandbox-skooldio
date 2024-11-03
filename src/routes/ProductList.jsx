@@ -8,6 +8,10 @@ const ProductList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Products"; // Set the page title here
+  }, []);
+  
+  useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
