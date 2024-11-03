@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate(); // Initialize navigate
 
-  const handleListClick = () => {
-    navigate("/products"); // Navigate to the /cart URL
+ const handleListClick = () => {
+    navigate("/"); // Navigate to the /cart URL
   };
 
   const handleCartClick = () => {
