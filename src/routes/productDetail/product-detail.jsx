@@ -20,7 +20,6 @@ import {
 export default function ProductDetail() {
   const { permalink } = useParams(); // Get permalink from URL params
   const { addToCart } = useCart();
-  const navigate = useNavigate(); // Add this
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedColorCode, setSelectedColorCode] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
@@ -227,11 +226,14 @@ export default function ProductDetail() {
                           backgroundColor: colorCode, // Set the background color to the color code
                           border:
                             selectedColorCode === colorCode
-                              ? "2px solid black"
-                              : "none",
+                              ? "1.5px solid #C1CD00"
+                              : "1.5px solid #E1E1E1",
                           borderRadius: "0",
                         }}
-                        onClick={() => setSelectedColorCode(colorCode)}
+                        onClick={() => {
+                          setSelectedColorCode(colorCode);
+                          setSelectedColor(color);
+                        }}
                       ></Button>
                       <div className="mt-[8px] text-[16px] text-[#222222] text-center">
                         {color} {/* Display the color name */}
