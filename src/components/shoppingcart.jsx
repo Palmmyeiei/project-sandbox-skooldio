@@ -4,6 +4,7 @@ import { useCart } from "../routes/cart/card-context"; // Adjust the import path
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"; // Material-UI ShoppingBag icon
 import DeleteIcon from "@mui/icons-material/Delete"; // Material-UI Delete icon
 import { Button } from "@mui/material";
+import emptyCartImage from "../assets/emptycart.png";
 
 const ShoppingCart = () => {
   const { cartItems } = useCart(); // Get cartItems from CartContext
@@ -40,7 +41,7 @@ const ShoppingCart = () => {
           {cartItems.length === 0 ? (
             <div className="empty-cart">
               <div className="w-[403px] h-[403px] mx-auto mb-4">
-                <img src="../../src/assets/emptycart.png" alt="emptycart" />
+               <img src={emptyCartImage} alt="emptycart" />
               </div>
               <p className="text-xl font-bold mb-2">Your cart is empty</p>
               <span className="text-sm text-[#666] mb-5 block">
