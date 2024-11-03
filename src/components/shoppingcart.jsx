@@ -7,11 +7,11 @@ import { Button } from "@mui/material";
 import emptyCartImage from "../assets/emptycart.png";
 
 const ShoppingCart = () => {
-  const { cartItems } = useCart(); // Get cartItems from CartContext
+  const { cartItems, removeFromCart } = useCart();
   const cartId = localStorage.getItem("cartId");
   const navigate = useNavigate();
 
-  const removeFromCart = async (itemId) => {
+  const handleRemoveFromCart = async (itemId) => {
     try {
       await fetch(
         `https://api.storefront.wdb.skooldio.dev/carts/${cartId}/items/${itemId}`,
@@ -19,8 +19,7 @@ const ShoppingCart = () => {
           method: "DELETE",
         }
       );
-      // Update the cartItems in context
-      removeFromCart(itemId); // Call the context method to remove the item
+      removeFromCart(itemId);
     } catch (error) {
       console.error("Error removing item:", error);
     }
@@ -41,7 +40,7 @@ const ShoppingCart = () => {
           {cartItems.length === 0 ? (
             <div className="empty-cart">
               <div className="w-[403px] h-[403px] mx-auto mb-4">
-               <img src={emptyCartImage} alt="emptycart" />
+                <img src={emptyCartImage} alt="emptycart" />
               </div>
               <p className="text-xl font-bold mb-2">Your cart is empty</p>
               <span className="text-sm text-[#666] mb-5 block">
@@ -86,7 +85,7 @@ const ShoppingCart = () => {
                     // variant="outlined"
                     color="#222222"
                     size="small"
-                    onClick={() => removeFromCart(item.skuCode)} // Call the remove function
+                    onClick={() => handleRemoveFromCart(item.skuCode)} // Call the remove function
                   >
                     <DeleteIcon className="h-4 w-4" />
                     <span className="sr-only">Remove item</span>
