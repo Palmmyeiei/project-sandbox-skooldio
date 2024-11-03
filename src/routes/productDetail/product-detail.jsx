@@ -30,6 +30,10 @@ export default function ProductDetail() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Product Detail"; // Set the page title here
+  }, []);
+  
+  useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
