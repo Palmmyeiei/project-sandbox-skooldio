@@ -4,7 +4,7 @@ import ProductDetail from "./product-detail";
 import ProductRecommendations from "./product-recommend";
 import { useEffect } from "react";
 
-function ShowProductDetail() {
+export default function ShowProductDetail() {
   useEffect(() => {
     document.title = "Product Detail"; // Set the page title here
   }, []);
@@ -19,4 +19,3 @@ function ShowProductDetail() {
   );
 }
 
-export default ShowProductDetail;
