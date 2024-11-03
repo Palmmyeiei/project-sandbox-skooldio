@@ -2,6 +2,9 @@ import React from "react";
 import Navbar from "./components/navbar";
 import ProductRecommendations from "./routes/productDetail/product-recommend";
 import Footer from "./components/footer";
+import bannerImage from "./assets/banner.jpeg";
+import cozyImage from "./assets/CozyHome.jpeg";
+import flexiImage from "./assets/sunsethour.jpeg";
 
 function App() {
   return (
@@ -12,7 +15,7 @@ function App() {
       {/* Hero Section */}
       <section className="relative">
         <img
-          src="../src/assets/banner.jpeg"
+          src={bannerImage}
           alt="2024Collection"
           className="w-full h-80 object-cover"
         />
@@ -28,7 +31,7 @@ function App() {
         <div className="flex flex-col md:flex-row justify-center gap-8">
           <div className="bg-white shadow-lg rounded-lg overflow-hidden w-full md:w-1/2">
             <img
-              src="../src/assets/CozyHome.jpeg"
+              src={cozyImage}
               alt="Cozy Breeze"
               className="w-full h-48 object-cover"
             />
@@ -45,7 +48,7 @@ function App() {
           </div>
           <div className="bg-white shadow-lg rounded-lg overflow-hidden w-full md:w-1/2">
             <img
-              src="../src/assets/sunsethour.jpeg"
+              src={flexiImage}
               alt="Flexi Move"
               className="w-full h-48 object-cover"
             />
