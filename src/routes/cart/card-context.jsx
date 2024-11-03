@@ -11,8 +11,10 @@ export default function CartProvider({ children }) {
     setCartItems((prevItems) => [...prevItems, item]);
   };
 
-  const removeFromCart = (item) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+  const removeFromCart = (itemId) => {
+    setCartItems((prevItems) =>
+      prevItems.filter((item) => item.skuCode !== itemId)
+    );
   };
 
   return (
