@@ -5,8 +5,12 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate(); // Initialize navigate
 
- const handleListClick = () => {
+  const handleAppClick = () => {
     navigate("/"); // Navigate to the /cart URL
+  };
+
+  const handleListClick = () => {
+    navigate("/products"); // Navigate to the /cart URL
   };
 
   const handleCartClick = () => {
@@ -22,13 +26,16 @@ const Navbar = () => {
           <Typography
             component="div"
             className="text-[18px] font-semibold font-bold"
-            onClick={handleListClick}
+            onClick={handleAppClick}
           >
             WDB
           </Typography>
 
           <Stack direction="row" spacing={3}>
-            <Typography className="hover:text-[#DEF81C] cursor-pointer">
+            <Typography
+              className="hover:text-[#DEF81C] cursor-pointer"
+              onClick={handleListClick}
+            >
               Men
             </Typography>
             <Typography className="hover:text-[#DEF81C] cursor-pointer">
