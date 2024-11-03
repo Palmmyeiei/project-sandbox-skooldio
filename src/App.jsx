@@ -5,8 +5,12 @@ import Footer from "./components/footer";
 import bannerImage from "./assets/banner.jpeg";
 import cozyImage from "./assets/CozyHome.jpeg";
 import flexiImage from "./assets/sunsethour.jpeg";
+import { useEffect } from "react";
 
-function App() {
+export default function App() {
+    useEffect(() => {
+    document.title = "Home"; // Set the page title here
+  }, []);
   return (
     <div className="font-sans text-gray-800">
       {/* Header */}
@@ -71,5 +75,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
